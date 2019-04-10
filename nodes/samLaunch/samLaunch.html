@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sam:launch', {
+        category: 'webos',
+        color: '#3FADB5',
+        defaults: {
+            name: {value: ""},
+            appId: {value: ""},
+            params: {value: "{}"},
+            timeout: {value: 5000}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "white-globe.png",
+        label: function () {
+            return this.name || "sam:launch";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sam:launch">
+    <div class="form-row">
+        <label for="node-input-appId"><i class="fa fa-file"></i> id</label>
+        <input type="text" id="node-input-appId" placeholder="target app ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-params"><i class="fa fa-file"></i> params</label>
+        <input type="text" id="node-input-params" placeholder="params">
+    </div>
+    <div class="form-row">
+        <label for="node-input-timeout"><i class="fa fa-file"></i> timeout(ms)</label>
+        <input type="text" id="node-input-timeout" placeholder="failback time to run next node">
+    </div>
+    <p>&nbsp;</p>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="sam:launch">
+    <p>Launches an application which corresponds to the given id (application Id).</p>
+    <h3>id</h3>
+    <p>(required) The application ID to be launched.</p>
+    <h3>params</h3>
+    <p>JSON object to send additional information for launching an application</p>
+    <h3>timeout</h3>
+    <p>time to run next node.</p>
+    <p/>
+    <h3>Name</h3>
+    <p>display name at flow diagram</p>
+</script>

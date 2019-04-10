@@ -1,0 +1,8 @@
+{
+    "com.webos.service.flowmanager": [
+        "applications.internal",
+        "flow.control",
+        "networking",
+        "tts.internal"
+    ]
+}

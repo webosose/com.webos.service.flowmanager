@@ -1,0 +1,63 @@
+<script type="text/javascript">
+    RED.nodes.registerType('tts:speak', {
+        category: 'webos',
+        color: '#C7E9C0',
+        defaults: {
+            text: {value: ""},
+            clear: {value: false},
+            isSubscribe: {value: false},
+            lang: {value: "en-US"}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "bridge.png",
+        label: function () {
+            return this.name || "tts:speak";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="tts:speak">
+    <div class="form-row">
+        <label for="node-input-text"><i class="fa fa-file"></i> text</label>
+        <input type="text" id="node-input-text" placeholder="(required) Text to speak">
+    </div>
+    <div class="form-row">
+        <label for="node-input-lang"><i class="fa fa-file"></i> Language</label>
+        <input type="text" id="node-input-lang" placeholder="Language (en-US / ko-KR)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clear"><i class="fa fa-file"></i> Clear</label>
+        <input type="checkbox" id="node-input-clear" style="display:inline-block; width:15px; vertical-align:baseline;">
+    </div>
+    <div class="form-row">
+        <label for="node-input-isSubscribe"><i class="fa fa-file"></i> Subscribe</label>
+        <input type="checkbox" id="node-input-isSubscribe" style="display:inline-block; width:15px; vertical-align:baseline;">
+    </div>
+    <p>&nbsp;</p>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="tts:speak">
+    <p>Reads out an input text in the language of your choice.</p>
+    <h3>Precondition</h3>
+    <p>Before using the service, you need to enable Google Cloud Text-to-speech API on the device.</p>
+    <p>detail guide at http://webosose.org/develop/ls2-api/ls2-api-reference/com-webos-service-tts/</p>
+    <p/>
+    <h3>text</h3>
+    <p>(Required) Text to be converted.</p>
+    <h3>language</h3>
+    <p>Language in which the input text is read out.</p>
+    <p>Default language is English (en-US).</p>
+    <h3>Clear</h3>
+    <p>Indicates if the current text is to be cleared.</p>
+    <h3>Subscribe</h3>
+    <p>Subscribe for notifications.</p>
+    <p/>
+    <h3>Name</h3>
+    <p>display name at flow diagram</p>
+</script>

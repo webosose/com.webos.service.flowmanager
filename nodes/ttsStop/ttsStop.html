@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('tts:stop', {
+        category: 'webos',
+        color: '#C7E9C0',
+        defaults: {
+            fadeOut: {value:true}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "alert.png",
+        label: function () {
+            return this.name || "tts:stop";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="tts:stop">
+    <div class="form-row">
+        <label for="node-input-fadeOut"><i class="fa fa-file"></i> fadeOut</label>
+        <input type="checkbox" id="node-input-fadeOut" style="display:inline-block; width:15px; vertical-align:baseline;">
+    </div>
+    <p>&nbsp;</p>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="tts:stop">
+    <p>Stops the text-to-speech processing immediately and ignores the pending text on the buffer.</p>
+    <h3>fadeOut</h3>
+    <p>Reduces the output sound without any noise.</p>
+    <p/>
+    <h3>Name</h3>
+    <p>display name at flow diagram</p>
+</script>

@@ -1,0 +1,11 @@
+{
+    "appId":"com.webos.service.flowmanager",
+    "type": "regular",
+    "allowedNames": ["com.webos.service.flowmanager"],
+    "permissions": [
+        {
+            "service":"com.webos.service.flowmanager",
+            "outbound": ["*"]
+        }
+    ]
+}

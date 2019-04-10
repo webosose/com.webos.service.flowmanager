@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.webos.service.flowmanager
+Exec=run-js-service -u -g -k -w -n /usr/palm/services/com.webos.service.flowmanager
+Type=static

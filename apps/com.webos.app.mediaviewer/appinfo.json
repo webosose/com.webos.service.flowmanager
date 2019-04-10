@@ -1,0 +1,20 @@
+{
+    "id": "com.webos.app.mediaviewer",
+    "version": "1.0.0",
+    "vendor": "LG Electronics",
+    "type": "web",
+    "main": "index.html",
+    "title": "mediaviewer",
+    "icon": "icon.png",
+    "uiRevision": 2,
+    "transparent": true,
+    "noSplashOnLaunch": true,
+    "disableBackHistoryAPI": true,
+    "supportQuickStart": false,
+    "trustLevel": "trusted",
+    "requiredPermissions": [
+        "private",
+        "public",
+        "applications.internal"
+    ]
+}

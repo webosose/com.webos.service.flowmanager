@@ -1,0 +1,20 @@
+# Copyright (c) 2018 LG Electronics, Inc.
+
+description "A manager of the flow control"
+
+start on boot-done
+
+respawn
+
+script
+    export SERVICE_DIR="@WEBOS_INSTALL_WEBOS_SERVICESDIR@/com.webos.service.flowmanager"
+    export FLOW_DIR="@WEBOS_INSTALL_LOCALSTORAGEDIR@/flow"
+
+    # if the flow file doesn't exist, copy default flow file (first use)
+    if [ ! -f "${FLOW_DIR}/flows.json" ]; then
+        mkdir -p ${FLOW_DIR}
+        cp "${SERVICE_DIR}/flow/flows.json" ${FLOW_DIR}
+    fi
+
+    exec run-js-service -a -u -g -k -w -t ${SERVICE_DIR} 2>> /var/log/flowmgr.err
+end script

@@ -1,0 +1,4 @@
+{
+  "name": "com.webos.service.flowmanager",
+  "main": "index.js"
+}

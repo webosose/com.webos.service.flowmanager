@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>media viewer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="./webOSjs-0.1.0/webOS.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <div id="screen0" ref="screen0" class="content-area" @click="handleClickContent">
+            <iframe v-if="content[0].extra.type === 'web'" :src="content[0].uri" v-on:load="handleLoadedData(0)" scrolling="no"></iframe>
+            <img v-else-if="content[0].extra.type === 'image'" :src="content[0].uri" v-on:load="handleLoadedData(0)"></img>
+            <video v-else-if="content[0].extra.type === 'video'" :src="content[0].uri" v-on:loadeddata="handleLoadedData(0)" preload="auto" ref="video"></video>
+            <div v-else-if="content[0].extra.type === 'audio'">
+                <audio controls :src="content[0].uri" v-on:loadeddata="handleLoadedData(0)" autoplay></audio>
+            </div>
+        </div>
+        <div id="screen1" ref="screen1" class="content-area" @click="handleClickContent">
+            <iframe v-if="content[1].extra.type === 'web'" v-on:load="handleLoadedData(1)" :src="content[1].uri" scrolling="no"></iframe>
+            <img v-else-if="content[1].extra.type === 'image'" :src="content[1].uri" v-on:load="handleLoadedData(1)"></img>
+            <video v-else-if="content[1].extra.type === 'video'" :src="content[1].uri" v-on:loadeddata="handleLoadedData(1)" preload="auto" ref="video"></video>
+            <div v-else-if="content[1].extra.type === 'audio'">
+                <audio controls :src="content[1].uri" v-on:loadeddata="handleLoadedData(1)" autoplay></audio>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

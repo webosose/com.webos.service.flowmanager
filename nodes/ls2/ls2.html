@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ls2', {
+        category: 'webos',
+        color: '#E9967A',
+        defaults: {
+            name: {value: ""},
+            url: {value: ""},
+            params: {value: ""},
+            isSubscribe: {value: false}
+        },
+        inputs: 1,
+        outputs: 2,
+        outputLabels: ["returnValue == true","returnValue == false"],
+        icon: "function.png",
+        label: function () {
+            return this.name || "ls2";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ls2">
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-file"></i> url</label>
+        <input type="text" id="node-input-url" placeholder="service url to request">
+    </div>
+    <div class="form-row">
+        <label for="node-input-params"><i class="fa fa-file"></i> Parameter</label>
+        <input type="text" id="node-input-params" placeholder="parameter">
+    </div>
+    <div class="form-row">
+        <label for="node-input-isSubscribe"><i class="fa fa-file"></i> Subscribe</label>
+        <input type="checkbox" id="node-input-isSubscribe" style="display:inline-block; width:15px; vertical-align:baseline;">
+    </div>
+    <p>&nbsp;</p>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<script type="text/x-red" data-help-name="ls2">
+    <p>Call specific service method(API) by luna bus.</p>
+    <h3>url</h3>
+    <p>API url to requestexcept 'luna://'</p>
+    <p>(ex. com.webos.service.applicationmanager/launch)</p>
+    <h3>Parameter</h3>
+    <p>json formatted string to request</p>
+    <p>(ex. {"id":"bareapp"})</p>
+    <h3>Subscribe</h3>
+    <p>Subscribe to the method</p>
+    <h3>Name</h3>
+    <p>display name at flow diagram</p>
+</script>

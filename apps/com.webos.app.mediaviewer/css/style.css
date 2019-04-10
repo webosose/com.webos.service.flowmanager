@@ -1,0 +1,39 @@
+body {
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	overflow: hidden;
+	font-family: "LG Display-light";
+	background-color: #ffffff;
+	position: relative;
+}
+
+.content-area {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	transition-duration: 2s;
+	transition-delay: 1s;
+}
+
+.content-area > :first-child {
+	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 1920px;
+	height: 1080px;
+	border: none;
+	overflow: hidden;
+}
+
+.content-area > iframe {
+	pointer-events: none;
+}
+
+video {
+	object-fit: cover;
+}

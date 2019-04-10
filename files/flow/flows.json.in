@@ -1,0 +1,583 @@
+[
+    {
+        "id": "5967582a.5d0dd8",
+        "type": "tab",
+        "label": "webos intro signage",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "181e68c9.9335b7",
+        "type": "tab",
+        "label": "Examples",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ffdcbe95.5c10a",
+        "type": "inject",
+        "z": "5967582a.5d0dd8",
+        "name": "start webOS signage",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 60,
+        "wires": [
+            [
+                "d502fbe6.7f8ad8",
+                "ec481a63.262138"
+            ]
+        ]
+    },
+    {
+        "id": "d502fbe6.7f8ad8",
+        "type": "sam:launch",
+        "z": "5967582a.5d0dd8",
+        "name": "video: logo",
+        "appId": "com.webos.app.mediaviewer",
+        "params": "{\"uri\": \"./media/webOS_OSE_Intro_1.mp4\",\"requester\": \"com.webos.service.flowmanager\",\"action\":\"action_flowNode\",\"extra\": {\"type\": \"video\"}}",
+        "timeout": "8000",
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "719d4e34.96fc9",
+                "c772b61b.2a0c28"
+            ]
+        ]
+    },
+    {
+        "id": "719d4e34.96fc9",
+        "type": "sam:launch",
+        "z": "5967582a.5d0dd8",
+        "name": "image: update info",
+        "appId": "com.webos.app.mediaviewer",
+        "params": "{\"uri\": \"./img/new-releases.jpg\",\"requester\": \"com.webos.service.flowmanager\",\"action\":\"action_flowNode\",\"extra\": {\"type\": \"image\"}}",
+        "timeout": "14000",
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "f23e0b54.7eb1d8",
+                "34270c26.143f04"
+            ]
+        ]
+    },
+    {
+        "id": "f23e0b54.7eb1d8",
+        "type": "sam:launch",
+        "z": "5967582a.5d0dd8",
+        "name": "image: youtube open",
+        "appId": "com.webos.app.mediaviewer",
+        "params": "{\"uri\": \"./img/youtube_open_720p.jpg\",\"requester\": \"com.webos.service.flowmanager\",\"action\":\"action_flowNode\",\"extra\": {\"type\": \"image\"}}",
+        "timeout": "12000",
+        "x": 800,
+        "y": 100,
+        "wires": [
+            [
+                "291610d4.0cd92"
+            ]
+        ]
+    },
+    {
+        "id": "291610d4.0cd92",
+        "type": "sam:launch",
+        "z": "5967582a.5d0dd8",
+        "name": "video: webos furture",
+        "appId": "com.webos.app.mediaviewer",
+        "params": "{\"uri\": \"./media/webOS_OSE_Intro_3.mp4\",\"requester\": \"com.webos.service.flowmanager\",\"action\":\"action_flowNode\",\"extra\": {\"type\": \"video\"}}",
+        "timeout": "27000",
+        "x": 1040,
+        "y": 100,
+        "wires": [
+            [
+                "8577047a.07d558"
+            ]
+        ]
+    },
+    {
+        "id": "9f84d954.0e38c8",
+        "type": "link in",
+        "z": "5967582a.5d0dd8",
+        "name": "",
+        "links": [
+            "8577047a.07d558"
+        ],
+        "x": 175,
+        "y": 140,
+        "wires": [
+            [
+                "d502fbe6.7f8ad8",
+                "ec481a63.262138"
+            ]
+        ]
+    },
+    {
+        "id": "8577047a.07d558",
+        "type": "link out",
+        "z": "5967582a.5d0dd8",
+        "name": "",
+        "links": [
+            "9f84d954.0e38c8"
+        ],
+        "x": 1195,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ec481a63.262138",
+        "type": "tts:speak",
+        "z": "5967582a.5d0dd8",
+        "text": "Welcome to web O S O S E. Update inform for recent post and furture plan of web O S",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c772b61b.2a0c28",
+        "type": "tts:speak",
+        "z": "5967582a.5d0dd8",
+        "text": "First, new release at March 2019. We add TTS service, update media component and enhance localization. Second, Beanvisor 2.0 relases for your convenience.",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34270c26.143f04",
+        "type": "tts:speak",
+        "z": "5967582a.5d0dd8",
+        "text": "We also open youtube channel as web O S O S E. Those videos will help you get to know more about web O S O S E.",
+        "clear": true,
+        "isSubscribe": true,
+        "lang": "en-US",
+        "x": 780,
+        "y": 180,
+        "wires": [
+            [
+                "f65dce59.3e99c"
+            ]
+        ]
+    },
+    {
+        "id": "f65dce59.3e99c",
+        "type": "delay",
+        "z": "5967582a.5d0dd8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 920,
+        "y": 180,
+        "wires": [
+            [
+                "b9750e25.d1024"
+            ]
+        ]
+    },
+    {
+        "id": "b9750e25.d1024",
+        "type": "tts:speak",
+        "z": "5967582a.5d0dd8",
+        "text": "Finally. we show short video for web O S furture plan.",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 1060,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc20ebe.c6caa18",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "launch",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "4989acac.126dd4"
+            ]
+        ]
+    },
+    {
+        "id": "4989acac.126dd4",
+        "type": "sam:launch",
+        "z": "181e68c9.9335b7",
+        "name": "bareapp",
+        "appId": "bareapp",
+        "params": "{}",
+        "timeout": 5000,
+        "x": 340,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f43a4164.ef464",
+        "type": "ls2",
+        "z": "181e68c9.9335b7",
+        "name": "ls2: launch with valid app id",
+        "url": "com.webos.service.applicationmanager/launch",
+        "params": "{\"id\":\"bareapp\"}",
+        "isSubscribe": false,
+        "x": 400,
+        "y": 220,
+        "wires": [
+            [
+                "92b0ca5e.744218"
+            ],
+            [
+                "141f0ee6.174e61"
+            ]
+        ]
+    },
+    {
+        "id": "92b0ca5e.744218",
+        "type": "debug",
+        "z": "181e68c9.9335b7",
+        "name": "Return success",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 680,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "141f0ee6.174e61",
+        "type": "debug",
+        "z": "181e68c9.9335b7",
+        "name": "Return failure",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 680,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "44971385.2c91bc",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "launch",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "f43a4164.ef464"
+            ]
+        ]
+    },
+    {
+        "id": "2a6eccf3.be2e14",
+        "type": "ls2",
+        "z": "181e68c9.9335b7",
+        "name": "ls2: launch with invalid app id",
+        "url": "com.webos.service.applicationmanager/launch",
+        "params": "{\"id\":\"xxx\"}",
+        "isSubscribe": false,
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "92b0ca5e.744218"
+            ],
+            [
+                "141f0ee6.174e61"
+            ]
+        ]
+    },
+    {
+        "id": "adaad120.e5cc7",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "launch",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "2a6eccf3.be2e14"
+            ]
+        ]
+    },
+    {
+        "id": "2fa95b9c.a1f034",
+        "type": "tts:speak",
+        "z": "181e68c9.9335b7",
+        "text": "TTS speak example without subscription",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 340,
+        "y": 540,
+        "wires": [
+            [
+                "52eaf6d3.85c188"
+            ]
+        ]
+    },
+    {
+        "id": "de15441c.c39978",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "Run",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "2fa95b9c.a1f034"
+            ]
+        ]
+    },
+    {
+        "id": "52eaf6d3.85c188",
+        "type": "tts:speak",
+        "z": "181e68c9.9335b7",
+        "text": "First TTS is ignore as subscription is not set",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 520,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8755afa5.2deaa",
+        "type": "tts:speak",
+        "z": "181e68c9.9335b7",
+        "text": "TTS speak example with subscription",
+        "clear": true,
+        "isSubscribe": true,
+        "lang": "en-US",
+        "x": 340,
+        "y": 640,
+        "wires": [
+            [
+                "5cb907b8.b5be68"
+            ]
+        ]
+    },
+    {
+        "id": "5cb907b8.b5be68",
+        "type": "tts:speak",
+        "z": "181e68c9.9335b7",
+        "text": "As subsciption at first TTS, second TTS start after first TTS",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 520,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f47e7b03.2f10c8",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "Run",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [
+                "8755afa5.2deaa"
+            ]
+        ]
+    },
+    {
+        "id": "7764cb55.215964",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "sam:launch example",
+        "info": "",
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "79046674.01ce28",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "ls2 example - success case",
+        "info": "",
+        "x": 160,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fd818bcf.01d728",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "ls2 example - failure case",
+        "info": "",
+        "x": 150,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3b018bf6.d5bcb4",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "tts:speak & stop example",
+        "info": "",
+        "x": 150,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ffee3553.d89b68",
+        "type": "tts:speak",
+        "z": "181e68c9.9335b7",
+        "text": "TTS speak and stop example",
+        "clear": true,
+        "isSubscribe": false,
+        "lang": "en-US",
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "1219e7ce.09e978"
+            ]
+        ]
+    },
+    {
+        "id": "1219e7ce.09e978",
+        "type": "delay",
+        "z": "181e68c9.9335b7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "ffdf97cd.7fcc08"
+            ]
+        ]
+    },
+    {
+        "id": "ffdf97cd.7fcc08",
+        "type": "tts:stop",
+        "z": "181e68c9.9335b7",
+        "fadeOut": true,
+        "x": 660,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5c289764.80fad8",
+        "type": "inject",
+        "z": "181e68c9.9335b7",
+        "name": "Run",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "ffee3553.d89b68"
+            ]
+        ]
+    },
+    {
+        "id": "6aa5eda5.5f7564",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "tts:speak example without subscribe",
+        "info": "",
+        "x": 180,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b8c45be2.6f84d8",
+        "type": "comment",
+        "z": "181e68c9.9335b7",
+        "name": "tts:speak example with subscribe",
+        "info": "",
+        "x": 170,
+        "y": 600,
+        "wires": []
+    }
+]
