@@ -24,4 +24,4 @@ if [ ! -f "${FLOW_DIR}/flows.json" ]; then
     /bin/cp "${SERVICE_DIR}/flow/flows.json" ${FLOW_DIR}
 fi
 
-exec /usr/bin/run-js-service -a -u -g -k -w -t ${SERVICE_DIR} 2>> /var/log/flowmgr.err
+exec /usr/bin/run-js-service -a -u -g -k -w ${SERVICE_DIR} 2>> /var/log/flowmgr.err
