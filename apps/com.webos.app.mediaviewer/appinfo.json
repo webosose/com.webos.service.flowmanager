@@ -13,8 +13,6 @@
     "supportQuickStart": false,
     "trustLevel": "trusted",
     "requiredPermissions": [
-        "private",
-        "public",
-        "applications.internal"
+        "media"
     ]
 }
