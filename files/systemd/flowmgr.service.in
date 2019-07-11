@@ -1,6 +1,6 @@
 # @@@LICENSE
 #
-# Copyright (c) 2018 LG Electronics, Inc.
+# Copyright (c) 2018-2019 LG Electronics, Inc.
 #
 # Confidential computer software. Valid license from LG required for
 # possession, use or copying. Consistent with FAR 12.211 and 12.212,
@@ -13,7 +13,7 @@
 # Starts the flow manager service
 
 [Unit]
-Description=webos-pro - "%n"
+Description=webos - "%n"
 Requires=ls-hubd.service settings-service.service configd.service
 After=ls-hubd.service settings-service.service configd.service
 
@@ -22,6 +22,3 @@ Type=simple
 EnvironmentFile=-/var/systemd/system/env/flowmgr.env
 ExecStart=/etc/systemd/system/scripts/flowmgr.sh
 Restart=on-failure
-
-[Install]
-WantedBy=default-webos.target
