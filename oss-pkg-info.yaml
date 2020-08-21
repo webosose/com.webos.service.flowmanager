@@ -1,0 +1,4 @@
+Open Source Software Package:
+- name: webOSOSE
+  source: https://github.com/webosose/com.webos.service.flowmanager
+  license : Apache-2.0
