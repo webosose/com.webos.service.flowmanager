@@ -13,6 +13,8 @@
     "supportQuickStart": false,
     "trustLevel": "trusted",
     "requiredPermissions": [
-        "media"
+        "application.launcher",
+        "mediacontroller.query",
+        "mediacontroller.operation"
     ]
 }

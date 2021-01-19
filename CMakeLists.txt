@@ -34,8 +34,7 @@ set(WEBOS_INSTALL_DESTDIR ${WEBOS_INSTALL_WEBOS_SERVICESDIR}/com.webos.service.f
 webos_build_configured_file(files/flow/flows.json DESTDIR flow)
 
 # launch
-webos_build_configured_file(files/launch/flowmgr.conf SYSCONFDIR init)
-webos_build_configured_file(files/systemd/flowmgr.service BASE_LIBDIR systemd/system)
+webos_build_configured_file(files/systemd/flowmgr.service SYSCONFDIR systemd/system)
 webos_configure_source_files(launch_scripts files/systemd/flowmgr.sh)
 
 # install
