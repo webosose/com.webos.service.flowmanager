@@ -1,5 +1,6 @@
 {
     "appId":"com.webos.service.flowmanager",
+    "trustLevel": "oem",
     "type": "regular",
     "allowedNames": ["com.webos.service.flowmanager"],
     "permissions": [
