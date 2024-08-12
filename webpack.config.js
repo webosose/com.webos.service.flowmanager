@@ -11,6 +11,7 @@ const serverConfig = {
         app: APP_DIR + '/index.js'
     },
     output: {
+        hashFunction: "sha256",
         filename: 'index.js',
         path: BUILD_DIR
     },
