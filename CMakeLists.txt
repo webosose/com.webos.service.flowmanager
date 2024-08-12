@@ -39,6 +39,7 @@ webos_configure_source_files(launch_scripts files/systemd/flowmgr.sh)
 
 # install
 install(DIRECTORY nodes DESTINATION ${WEBOS_INSTALL_DESTDIR})
+install(DIRECTORY certs DESTINATION ${WEBOS_INSTALL_DESTDIR})
 install(FILES dist/index.js DESTINATION ${WEBOS_INSTALL_DESTDIR})
 install(FILES dist/package.json DESTINATION ${WEBOS_INSTALL_DESTDIR})
 install(PROGRAMS ${launch_scripts} DESTINATION ${WEBOS_INSTALL_SYSCONFDIR}/systemd/system/scripts)

@@ -1,7 +1,8 @@
 var RED = require("node-red");
 var express = require("express");
 
-var http = require('http');
+const https = require('https');
+const fs = require('fs');
 var path = require('path');
 var deepmerge = require('deepmerge').default;
 
@@ -50,11 +51,21 @@ function registerLunaCB(callback, out) {
 // Create an Express app
 var app = express();
 
+// disable x-powered-by header
+app.disable('x-powered-by');
+
 // Add a simple route for static content served from 'public'
 app.use("/", express.static("public"));
 
+var key = fs.readFileSync(__dirname + '/certs/private.pem');
+var cert = fs.readFileSync(__dirname + '/certs/public.pem');
+var options = {
+  key: key,
+  cert: cert
+};
+
 // Create a server
-var server = http.createServer(app);
+var server = https.createServer(options, app);
 
 // Create the settings object - see default settings.js file for other options
 var settings = {
